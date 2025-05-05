@@ -18,5 +18,5 @@ public class GameDTO {
     private Integer stockTotal;
 
     @NotBlank(message = "Price is required")
-    private Integer pricePerDay;
+    private Double pricePerDay;
 }
