@@ -1,10 +1,13 @@
 
 package com.boardcamp.api.models;
 import com.boardcamp.api.dtos.GameDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 
 @Data
@@ -35,5 +38,9 @@ public class GameModel {
 
     @Column(nullable = false)
     private Double pricePerDay;
+
+    @OneToMany(mappedBy = "game")
+    @JsonIgnore
+    private List<RentalModel> rentals;
 
 }

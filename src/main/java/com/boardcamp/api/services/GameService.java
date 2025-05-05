@@ -1,7 +1,7 @@
 package com.boardcamp.api.services;
 
 import com.boardcamp.api.dtos.GameDTO;
-import com.boardcamp.api.exceptions.GameNameConflictException;
+import com.boardcamp.api.exceptions.GenericConflictException;
 import com.boardcamp.api.exceptions.GenericBadRequestException;
 import com.boardcamp.api.models.GameModel;
 import com.boardcamp.api.repositories.GameRepository;
@@ -27,7 +27,7 @@ public class GameService {
     public GameModel save(GameDTO dto) {
         Optional<GameModel> existinGame = gameRepository.findByName(dto.getName());
         if (existinGame.isPresent()) {
-            throw new GameNameConflictException("This name already exists");
+            throw new GenericConflictException("This name already exists");
         }
 
         if (dto.getStockTotal() <= 0) {
