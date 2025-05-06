@@ -19,10 +19,10 @@ public class RentalModel {
         this.customer = customer;
         this.game = game;
         this.daysRented = dto.getDaysRented();
-        this.returnDate = dto.getReturnDate();
-        this.originalPrice = dto.getOriginalPrice();
-        this.delayFee = dto.getDelayFee();
-        this.rentDate = dto.getRentDate();
+//        this.returnDate = dto.getReturnDate();
+//        this.originalPrice = dto.getOriginalPrice();
+//        this.delayFee = dto.getDelayFee();
+//        this.rentDate = dto.getRentDate();
     }
 
     @Id
@@ -44,7 +44,7 @@ public class RentalModel {
     private LocalDate returnDate;
 
     @Column(nullable = false)
-    private Integer originalPrice;
+    private Double originalPrice;
 
     @Column
     private Double delayFee = 0.0;

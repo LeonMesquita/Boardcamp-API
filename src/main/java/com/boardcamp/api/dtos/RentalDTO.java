@@ -11,13 +11,19 @@ public class RentalDTO {
     @NotBlank(message = "daysRented rented is required")
     private Integer daysRented;
 
-    private LocalDate returnDate;
+    @NotBlank(message = "customerId is required")
+    private Long customerId;
 
-    @NotBlank(message = "originalPrice rented is required")
-    private Integer originalPrice;
+    @NotBlank(message = "gameId is required")
+    private Long gameId;
 
-    private Double delayFee;
-
-    @NotBlank(message = "rentDate rented is required")
-    private LocalDate rentDate;
+//    private LocalDate returnDate;
+//
+//    @NotBlank(message = "originalPrice rented is required")
+//    private Integer originalPrice;
+//
+//    private Double delayFee;
+//
+//    @NotBlank(message = "rentDate rented is required")
+//    private LocalDate rentDate;
 }

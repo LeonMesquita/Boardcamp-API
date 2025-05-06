@@ -1,10 +1,13 @@
 
 package com.boardcamp.api.models;
 import com.boardcamp.api.dtos.CustomerDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -26,5 +29,9 @@ public class CustomerModel {
 
     @Column(nullable = false, unique = true, length = 11)
     private String cpf;
+
+    @OneToMany(mappedBy = "customer")
+    @JsonIgnore
+    private List<RentalModel> rentals;
 
 }
